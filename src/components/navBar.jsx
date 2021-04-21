@@ -28,25 +28,46 @@ class NavBar extends Component {
                 </g>
               </svg>
             </a>
-            <a class="nav-link py-2 d-none d-md-inline-block" href="#">
+            <a
+              class="text-light nav-link py-2 d-none d-md-inline-block"
+              href="#"
+            >
               Tour
             </a>
-            <a class="nav-link py-2 d-none d-md-inline-block" href="#">
+            <a
+              class="text-light nav-link py-2 d-none d-md-inline-block"
+              href="#"
+            >
               Product
             </a>
-            <a class="nav-link py-2 d-none d-md-inline-block" href="#">
+            <a
+              class="text-light nav-link py-2 d-none d-md-inline-block"
+              href="#"
+            >
               Features
             </a>
-            <a class="nav-link py-2 d-none d-md-inline-block" href="#">
+            <a
+              class="text-light nav-link py-2 d-none d-md-inline-block"
+              href="#"
+            >
               Enterprise
             </a>
-            <a class="nav-link py-2 d-none d-md-inline-block" href="#">
+            <a
+              class="text-light nav-link py-2 d-none d-md-inline-block"
+              href="#"
+            >
               Support
             </a>
-            <a class="nav-link py-2 d-none d-md-inline-block" href="#">
+            <a
+              class="text-light nav-link py-2 d-none d-md-inline-block"
+              href="#"
+            >
               Pricing
             </a>
-            <a class="nav-link py-2 d-none d-md-inline-block" href="#">
+            <a
+              class="text-light nav-link py-2 d-none d-md-inline-block"
+              href="#"
+            >
               Cart
             </a>
           </div>

@@ -1,14 +1,14 @@
 import React from "react";
-import Test from "./components/test";
 import NavBar from "./components/navBar";
 import Hero from "./components/hero";
+import Features from "./components/features";
 
 const App = () => {
   return (
     <React.Fragment>
       <NavBar />
       <Hero />
-      <Test />
+      <Features />
     </React.Fragment>
   );
 };
