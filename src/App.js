@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "./components/navBar";
 import Hero from "./components/hero";
 import Features from "./components/features";
+import Footer from "./components/footer";
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       <NavBar />
       <Hero />
       <Features />
+      <Footer />
     </React.Fragment>
   );
 };
