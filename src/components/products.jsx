@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { commerce } from ".././lib/commerce";
-import Product from "./product";
+import { toast } from "react-toastify";
+import ProductCard from "./productCard";
+import ProductItem from "./productItem";
 
 class Products extends Component {
   constructor(props) {
@@ -23,7 +25,7 @@ class Products extends Component {
         this.setState({ products: products.data });
       })
       .catch((error) => {
-        console.log("There was an error fetching the products", error);
+        console.error("There was an error fetching the products", error);
       });
   }
 
@@ -35,7 +37,7 @@ class Products extends Component {
     return (
       <div>
         {this.state.products.map((product) => {
-          return <Product key={product.id} product={product} />;
+          return <ProductItem key={product.id} product={product} />;
         })}
       </div>
     );
