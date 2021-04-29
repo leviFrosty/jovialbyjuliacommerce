@@ -14,8 +14,14 @@
 
 .contact-form {
   min-width: 800px;
-  max-width: 600px;
   align-self: center;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-form {
+    min-width: none;
+    max-width: 500px;
+  }
 }
 
 .contact-image {

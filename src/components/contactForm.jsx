@@ -1,59 +1,82 @@
-import React, { useState } from "react";
-import { useForm } from "@formspree/react";
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import loading from "../images/loading.gif";
+import checkSuccess from "../images/checkCircle.gif";
 
 function ContactForm() {
   const [state, handleSubmit] = useForm("xvodzkqj");
-  const [buttonText, setbuttonText] = useState("Send");
   if (state.succeeded) {
     return (
-      <div>
-        <h1>Thank you!</h1>
-        <p>We will get back to you shortly.</p>
+      <div className="d-flex justify-content-center flex-column mt-5">
+        <div>
+          <h1 className="text-center">
+            <span>
+              <img
+                className="m-2"
+                src={checkSuccess}
+                alt="success"
+                style={{ height: "3rem" }}
+              />
+            </span>
+            Success!
+          </h1>{" "}
+        </div>
+        <p className="text-center">We will get back to you shortly.</p>
       </div>
     );
   }
   return (
-    <form className="needs-validation" novalidate onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div className="form-floating mb-3">
         <input
-          type="text"
-          class="form-control"
+          className="form-control"
           id="name"
-          placeholder="John Doe"
+          type="name"
+          name="name"
+          placeholder="Name"
         />
-        <label for="name">Name</label>
+        <label htmlFor="name">Name</label>
+        <ValidationError field="name" prefix="Name" errors={state.errors} />
       </div>
       <div className="form-floating mb-3">
         <input
-          type="email"
-          class="form-control"
+          className="form-control"
           id="email"
-          placeholder="name@example.com"
+          type="email"
+          name="email"
+          placeholder="Email"
         />
-        <label for="email">Email address</label>
+        <label htmlFor="email">Email</label>
+        <ValidationError field="email" prefix="Email" errors={state.errors} />
       </div>
-      <div className="form-floating">
+      <div className="form-floating mb-3">
         <textarea
           className="form-control"
-          placeholder="Enter your message"
           id="message"
-          style={{ height: "100px" }}
-        ></textarea>
-        <label for="message">Message</label>
+          type="text"
+          name="message"
+          style={{ height: "150px" }}
+          placeholder="Message"
+        />
+        <label className="form-label" htmlFor="email">
+          Message
+        </label>
+        <ValidationError
+          field="message"
+          prefix="Message"
+          errors={state.errors}
+        />
       </div>
       <button
         className="btn btn-primary mt-2"
         type="submit"
         disabled={state.submitting}
       >
-        {buttonText}
+        Send
       </button>
-      <div>
-        {state.submitting && (
-          <img className="contact-loading" src={loading} alt="loading..." />
-        )}
-      </div>
+      {state.submitting && (
+        <img src={loading} alt="loading..." style={{ height: "50px" }} />
+      )}
     </form>
   );
 }
