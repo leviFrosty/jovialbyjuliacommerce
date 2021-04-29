@@ -7,6 +7,7 @@ import Footer from "./components/footer";
 import Products from "./components/products";
 import NotFound from "./components/notFound";
 import ContactUs from "./components/contact";
+import About from "./components/about";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/products" component={Products} />
           <Route path="/contact" component={ContactUs} />
           <Route path="/home" component={Hero} />
+          <Route path="/about" component={About} />
           <Route path="/not-found" component={NotFound} />
           <Redirect from="/" exact to="/home" />
           <Redirect to="/not-found" />
