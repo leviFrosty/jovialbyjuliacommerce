@@ -1,12 +1,23 @@
 import React, { Component } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 class NavBar extends Component {
+  state = {
+    toggle: true,
+  };
+
+  handeToggle = () => {
+    const current = this.state.toggle;
+    console.log(current);
+    this.setState({ toggle: !current });
+  };
+
   render() {
     return (
       <React.Fragment>
-        <nav class="navbar navbar-dark bg-dark site-header sticky-top py-1">
-          <div class="container d-flex flex-column flex-md-row justify-content-between">
-            <a class="py-2" href="#">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container d-flex flex-row flex-md-row justify-content-between">
+            <Link class="py-2" to="/">
               <svg
                 style={{ height: "25px", width: "25px" }}
                 id="Capa_1"
@@ -27,49 +38,70 @@ class NavBar extends Component {
                   />
                 </g>
               </svg>
-            </a>
-            <a
-              class="text-light nav-link py-2 d-none d-md-inline-block"
-              href="#"
+            </Link>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              onClick={this.handeToggle}
             >
-              Tour
-            </a>
-            <a
-              class="text-light nav-link py-2 d-none d-md-inline-block"
-              href="#"
+              <span className="navbar-toggler-icon" />
+            </button>
+            <div
+              className={
+                this.state.toggle
+                  ? "collapse navbar-collapse"
+                  : "navbar-collapse"
+              }
+              id="navbarNavAltMarkup"
             >
-              Product
-            </a>
-            <a
-              class="text-light nav-link py-2 d-none d-md-inline-block"
-              href="#"
-            >
-              Features
-            </a>
-            <a
-              class="text-light nav-link py-2 d-none d-md-inline-block"
-              href="#"
-            >
-              Enterprise
-            </a>
-            <a
-              class="text-light nav-link py-2 d-none d-md-inline-block"
-              href="#"
-            >
-              Support
-            </a>
-            <a
-              class="text-light nav-link py-2 d-none d-md-inline-block"
-              href="#"
-            >
-              Pricing
-            </a>
-            <a
-              class="text-light nav-link py-2 d-none d-md-inline-block"
-              href="#"
-            >
-              Cart
-            </a>
+              <div className="navbar-nav">
+                <NavLink
+                  className="text-light nav-item nav-link"
+                  activeStyle={{
+                    fontWeight: "bold",
+                    color: "#AA80FF",
+                  }}
+                  to="/home"
+                >
+                  Home
+                </NavLink>
+                <NavLink
+                  className="text-light nav-item nav-link"
+                  activeStyle={{
+                    fontWeight: "bold",
+                    color: "#AA80FF",
+                  }}
+                  to="/products"
+                >
+                  Products
+                </NavLink>
+                <NavLink
+                  activeStyle={{
+                    fontWeight: "bold",
+                    color: "#AA80FF",
+                  }}
+                  className="text-light nav-item nav-link"
+                  to="/contact"
+                >
+                  Contact
+                </NavLink>
+                <NavLink
+                  activeStyle={{
+                    fontWeight: "bold",
+                    color: "#AA80FF",
+                  }}
+                  className="text-light nav-item nav-link"
+                  to="/about"
+                >
+                  About Me
+                </NavLink>
+              </div>
+            </div>
           </div>
         </nav>
       </React.Fragment>

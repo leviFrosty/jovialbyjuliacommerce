@@ -26,9 +26,17 @@
 
 .contact-image {
   position: absolute;
-  bottom: 0%;
+  top: 0;
   right: 0%;
   z-index: -1;
   opacity: 0.5;
   height: 50%;
+}
+
+.lost-image {
+  position: absolute;
+  bottom: 15%;
+  right: -15%;
+  opacity: 0.5;
+  z-index: -1;
 }

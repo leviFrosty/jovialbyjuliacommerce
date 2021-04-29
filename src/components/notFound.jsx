@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
-    <div className="container d-flex justify-content-center flex-column align-items-center mb-5 mt-5">
+    <div className="container d-flex justify-content-center flex-column align-items-center mb-5 mt-5 vh-100 position-relative">
       <div>
         <h1 className="text-center">Oops, lost?</h1>
-        <Lost />
       </div>
       <div>
         <Link className="btn btn-primary m-2" to="/home">
@@ -20,6 +19,7 @@ const NotFound = () => {
           Home
         </Link>
       </div>
+      <Lost className="lost-image" />
     </div>
   );
 };
