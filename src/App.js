@@ -6,6 +6,7 @@ import Features from "./components/features";
 import Footer from "./components/footer";
 import Products from "./components/products";
 import NotFound from "./components/notFound";
+import ContactUs from "./components/contact";
 
 const App = () => {
   return (
@@ -14,8 +15,9 @@ const App = () => {
       <main>
         <Switch>
           <Route path="/products" component={Products} />
-          <Route path="/not-found" component={NotFound} />
+          <Route path="/contact" component={ContactUs} />
           <Route path="/home" component={Hero} />
+          <Route path="/not-found" component={NotFound} />
           <Redirect from="/" exact to="/home" />
           <Redirect to="/not-found" />
         </Switch>
