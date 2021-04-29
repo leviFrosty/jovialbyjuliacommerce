@@ -1,18 +1,25 @@
 import React from "react";
+import { Route, Redirect, Switch } from "react-router-dom";
 import NavBar from "./components/navBar";
 import Hero from "./components/hero";
 import Features from "./components/features";
 import Footer from "./components/footer";
 import Products from "./components/products";
-import ProductCard from "./components/productCard";
+import NotFound from "./components/notFound";
 
 const App = () => {
   return (
     <React.Fragment>
       <NavBar />
-      <Hero />
-      <Features />
-      <Products />
+      <main>
+        <Switch>
+          <Route path="/products" component={Products} />
+          <Route path="/not-found" component={NotFound} />
+          <Route path="/home" component={Hero} />
+          <Redirect from="/" exact to="/home" />
+          <Redirect to="/not-found" />
+        </Switch>
+      </main>
       <Footer />
     </React.Fragment>
   );

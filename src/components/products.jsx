@@ -35,9 +35,12 @@ class Products extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container d-flex justify-content-center">
         {this.state.products.map((product) => {
-          return <ProductItem key={product.id} product={product} />;
+          return (
+            console.log(product),
+            (<ProductCard key={product.id} product={product} />)
+          );
         })}
       </div>
     );
