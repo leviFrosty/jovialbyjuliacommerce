@@ -3,7 +3,7 @@
 ## Tools Used:
 
 - ReactJS
-- CommercialJS
+- CommerceJS
 - Stripe API
 - Bootstrap
 - Toastify
